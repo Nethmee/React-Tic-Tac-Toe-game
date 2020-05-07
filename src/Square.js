@@ -2,25 +2,23 @@ import React from 'react';
 //import logo from './logo.svg';
 //import './App.css';
 
-class Square extends React.Component {
-constructor(props){
 
-super(props);
-this.state={
- 
-}
-
-    }
-    render() {
-      return (
+ /* function Square(props){
+    return  (
       
-      <button 
-     
-       onClick={()=>{this.props.onClick()}} >
+      <button  onClick={()=>{this.props.onClick()}} >
                 <p>{this.props.value}</p>
 
-      </button>);
-    }
+      </button>
+      );
+  } */
+
+  function Square(props) {
+    return (
+      <button className="square" onClick={props.onClick}>
+     <h6>  {props.value}</h6>
+      </button>
+    );
   }
 
 export default Square;

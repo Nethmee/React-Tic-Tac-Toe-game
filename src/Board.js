@@ -30,6 +30,11 @@ class Board extends React.Component {
         })
         
     }
+  getWinner(){
+
+      console.log('get winner function')
+        
+    }
    
     handleClick(k) {
         console.log(k + " button pressed")
@@ -43,6 +48,7 @@ class Board extends React.Component {
         });
     }
 
+    
 
    /*  renderSquare() {
         var k = 1;
@@ -94,3 +100,4 @@ class Board extends React.Component {
 }
 
 export default Board;
+ 
