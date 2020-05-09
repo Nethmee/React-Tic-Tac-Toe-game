@@ -16,6 +16,13 @@ class Board extends React.Component {
         this.state = {
             squares: Array(9).fill(null),
             XIsNext :true,
+            history:[
+                {
+                    squares:Array(9).fill(null),
+                    XIsNext :true,
+                }
+            ],
+
           
         };
     }
@@ -27,12 +34,13 @@ class Board extends React.Component {
         this.setState({
             squares:squares,
             XIsNext:true,
+            
         })
         
     }
   getWinner(squares){
 
-      console.log('get winner function' +squares)
+     
       const lines = [
         [0, 1, 2],
         [3, 4, 5],
@@ -47,6 +55,7 @@ class Board extends React.Component {
         const [a, b, c] = lines[i];
         if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
           return squares[a];
+
         }
       }
       return null; 
@@ -54,15 +63,41 @@ class Board extends React.Component {
     }
    
     handleClick(k) {
-        console.log(k + " button pressed")
+        //console.log(k + " button pressed")
         const squares = this.state.squares.slice();
+       
         squares[k] = (this.state.XIsNext ?'X':'O');
-      
+        const pastPlayer =!this.state.XIsNext 
+        //console.log(this.state.XIsNext)
+
+        const currentHistory=this.state.history.slice()
+       // console.log("PreviousHistory "+JSON.stringify(currentHistory))
+
+       let forHistory ={
+            squares:squares,
+            XIsNext:!pastPlayer 
+        }
+        const History=currentHistory.push(forHistory)
+        //console.log("History "+History)
+       //console.log("UpdatedHistory "+JSON.stringify(forHistory))
+       //console.log(currentHistory)
         this.setState({ 
             squares: squares,
-            XIsNext: !this.state.XIsNext,
-        
+           // XIsNext: !this.state.XIsNext,
+            //history:History,
+            
         });
+        this.setState({
+            history:currentHistory,
+            
+        })
+
+        this.setState((b)=>{
+           console.log(this.setState)
+           // console.log("b "+JSON.stringify(b))
+        })
+      
+        console.log("after update "+JSON.stringify(this.state.history))
     }
 
     
