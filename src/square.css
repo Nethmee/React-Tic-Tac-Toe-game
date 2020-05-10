@@ -1,3 +1,15 @@
+.winner-visible{
+
+    visibility: visible;
+    color:#f6f6fc;
+    margin: auto;
+}
+.winner-invisible{
+
+    visibility:hidden;
+}
+
+
 .square-default{
 
     width:100px;
@@ -5,8 +17,10 @@
     background-color:#474787;
     border-color: #474787;
     position:relative;
-    padding:11%;
-
+    padding-bottom:30px;
+    font-size: 35px;
+    overflow:hidden;
+    color:#f6f6fc;
 }
 .square-X{
 
@@ -15,9 +29,14 @@
     background-color:#ff5252;
     border-color: #ff5252;
     position:relative;
-    padding:11%;
+    font-size: 35px;
+    color:#f6f6fc;
+   
+   
 
 }
+
+
 .square-Y{
 
     width:100px;
@@ -25,8 +44,10 @@
     background-color:#ffda79;
     border-color: #ffda79;
     position:relative;
-    padding:11%;
-
+    color:#f6f6fc;
+   
+    font-size: 35px;
+   
 }
 .square-X:focus{
     outline-style:none;
@@ -41,7 +62,7 @@
 
 }
 .current-player{
-    color:#f6f6fc;
+    color:#a39de2;
 }
 .square-board{
     width:300px;

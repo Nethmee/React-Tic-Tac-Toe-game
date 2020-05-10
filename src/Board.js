@@ -122,24 +122,34 @@ class Board extends React.Component {
     }  */
     render() {
      const nextPlayer = (this.state.XIsNext)? "player 1":"player 2"
+    
    
   
      console.log(nextPlayer)
-     const winner = this.getWinner(this.state.squares);
+     const outout = this.getWinner(this.state.squares);
+     const winner=(outout==="X")?"Player 1":"Player 2"
+     const winnerClass=(outout!=null)?"winner-visible":"winner-invisible"
+    
      
  return (
 
     <div>
-    <div class="current-player">
-    <h2>Next Player : <span>{nextPlayer}</span></h2>
 
+    <div class={winnerClass}>
+        <h1>Winner is {winner} !!</h1>
+    </div>
+    <div class="current-player">
+    <h5>Next Player : <span>{nextPlayer}</span></h5>
+  
         
     </div>
     <div class="square-board">
  {this.elements.map((i)=>{
    
-   const rows= i.map((x)=>{ let squareColor=(this.state.squares[x]=='X')?"square-X":"square-Y"
-    return <Square className={(this.state.squares[x]==null)?"square-default":squareColor} key={x} value={this.state.squares[x]} onClick ={()=>this.handleClick(x)}/>})
+   const rows= i.map((x)=>{ 
+       let disbale= (this.state.squares[x]==null)?false:true 
+       let squareColor=(this.state.squares[x]=='X')?"square-X":"square-Y"
+    return <Square className={(this.state.squares[x]==null)?"square-default":squareColor} key={x} value={this.state.squares[x]} disabled={disbale} onClick ={()=>this.handleClick(x)}/>})
    console.log(rows)
    rows.push(<br/>)
    return rows
