@@ -1,6 +1,6 @@
 import React from 'react';
 //import logo from './logo.svg';
-//import './App.css';
+import './square.css';
 
 
  /* function Square(props){
@@ -15,7 +15,7 @@ import React from 'react';
 
   function Square(props) {
     return (
-      <button className="square" onClick={props.onClick}>
+      <button className={props.className} onClick={props.onClick}>
      <h6>  {props.value}</h6>
       </button>
     );

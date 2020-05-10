@@ -1,0 +1,72 @@
+.square-default{
+
+    width:100px;
+    height:100px;
+    background-color:#474787;
+    border-color: #474787;
+    position:relative;
+    padding:11%;
+
+}
+.square-X{
+
+    width:100px;
+    height:100px;
+    background-color:#ff5252;
+    border-color: #ff5252;
+    position:relative;
+    padding:11%;
+
+}
+.square-Y{
+
+    width:100px;
+    height:100px;
+    background-color:#ffda79;
+    border-color: #ffda79;
+    position:relative;
+    padding:11%;
+
+}
+.square-X:focus{
+    outline-style:none;
+
+}
+.square-Y:focus{
+    outline-style:none;
+
+}
+.square-default:focus{
+    outline-style:none;
+
+}
+.current-player{
+    color:#f6f6fc;
+}
+.square-board{
+    width:300px;
+    height:300px;
+    padding:0px;
+    margin:auto;
+}
+.reset-button{
+    background-color:rgba(255,255,255,0);
+    width:100px;
+    height:40px;
+    border-color:#a39de2;
+    border-width: 2px;
+    border-radius:20px;
+    margin-top:20px;
+    color:#a39de2;
+    border-style: solid;
+}
+.reset-button:hover{
+
+    background-color:#f6f6fc;
+    color:#474787;
+    border-color:#474787;
+    border-style:solid
+}
+.reset-button:focus{
+outline-style:none;
+}
